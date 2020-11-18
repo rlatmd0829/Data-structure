@@ -19,11 +19,12 @@ public class selectionSort {
                 arr[stay] = arr[i];
                 arr[i] = temp;
 
-                selectionPrint(arr);
+                Print(arr);
 
             }
         }
-        public static void selectionPrint(int[] arr) {
+
+        public static void Print(int[] arr) {
             for (int i = 0; i < arr.length; i++) {
                 System.out.print(arr[i] + " ");
             }
