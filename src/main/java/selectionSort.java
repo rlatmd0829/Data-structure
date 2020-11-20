@@ -22,6 +22,7 @@ public class selectionSort {
                 Print(arr);
 
             }
+
         }
         public static void bubbleSort(int[] arr){
 
