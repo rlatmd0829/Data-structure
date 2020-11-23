@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class selectionSort {
+public class Sort {
     static int []arr = new int[]{13, 5, 6, 14, 38, 33, 2};
     static int []sorted = new int[7];
     static int count;
