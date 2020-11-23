@@ -24,6 +24,8 @@ public class selectionSort {
             }
 
         }
+
+
         public static void bubbleSort(int[] arr){
 
         }
