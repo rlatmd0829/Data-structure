@@ -49,6 +49,8 @@ public class Sort {
                 print(arr);
             }
 
+
+
         }
 
         public static void insertSort(int [] arr){ // 기준 값에 앞에 값들과 비교하면서 기준값을 오른쪽으로 이동시킨다.
