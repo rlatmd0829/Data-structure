@@ -5,7 +5,7 @@ public class Sort {
     static int []arr = new int[]{13, 5, 6, 14, 38, 33, 2};
     static int []sorted = new int[7];
     static int count;
-    public static void main(String[] args) {
+    public static void main(String[] args) { // 정렬 모음집
         //selectionSort(arr);
         //bubbleSort(arr);
         //insertSort(arr);

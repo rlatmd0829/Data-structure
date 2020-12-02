@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class test {
+public class test {  // 1874 스택수열 복붙
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

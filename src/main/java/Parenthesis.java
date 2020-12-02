@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Parenthesis { // 맞췄다!!
+public class Parenthesis { // 맞췄다!! 9012 괄호문제
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();

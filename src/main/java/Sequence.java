@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Stack;
 public class Sequence {
-    public static void main(String[] args){
+    public static void main(String[] args){ // 못풀음 1874 스택수열
         Scanner sc = new Scanner(System.in);
         Stack<Integer> s = new Stack<>();
         int m=0;

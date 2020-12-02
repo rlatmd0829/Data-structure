@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Editer { // 시간초과 ;;
+public class Editer { // 시간초과 ;; 1406 에디터 문제
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         Stack<Character> s = new Stack<>();

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Stack {
+public class Stack {   // 스택구현
     static int stack[] = new int[10000];
     static int size;
     public static void main(String[] args){
