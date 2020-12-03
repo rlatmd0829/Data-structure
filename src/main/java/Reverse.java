@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 
-public class Reverse {  //  9093 단어뒤집기 배껴서 맞춤 buffered에 대해서 공부하기
+public class Reverse {  //  9093 단어뒤집기 buffered에 대해서 공부하기, 거의 배껴서 해결
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -40,7 +40,7 @@ public class Reverse {  //  9093 단어뒤집기 배껴서 맞춤 buffered에 �
                     stack.push(input.charAt(j));
                 }
             }
-            bw.write(sb.toString()+"\n");
+            bw.write(sb.toString()+"\n"); // write 한다고 바로 출력되지않고 flush 할때 버퍼에서 출력됨?
             // toString은 객체가 가지고있는 정보를 문자열로 출력한다.
         }
         br.close();

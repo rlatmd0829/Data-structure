@@ -1,19 +1,19 @@
 import java.io.*;
 import java.util.Stack;
 
-public class Reverse2 { // 17413 단어뒤집기2 문제, 여기는왜 StringBuilder랑 맨뒤에 개행문자 안넣어주냐
-                        // 거의 복붙이라 다시 봐야함
+public class Reverse2 { // 17413 단어뒤집기2 문제, 여기는왜 StringBuilder랑 맨뒤에 개행문자 안넣어주냐, 거의 배껴서 해결
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         Stack<Character> stack = new Stack<>();
 
-
         String input = br.readLine();
         boolean tag = false; // tag안인지 밖인지 확인할 flag 생성
+
         //input += "\n";
-        StringBuilder sb = new StringBuilder("");
+        //StringBuilder sb = new StringBuilder("");
 
             for(int j=0; j<input.length(); j++){
                 if(input.charAt(j) == '<'){ // 태그 실행일때
