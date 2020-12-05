@@ -47,11 +47,11 @@ public class Editer { // 1406 에디터 문제, StringTokenizer 공부하기, �
             s.pop();
         }
         while (!k.empty()){    // 오른쪽 스택에서 모두 빌때까지 pop을 해주고 출력해준다.
-            bw.write(k.peek());
+            bw.write(k.peek()); // 버퍼에 저장한다는 의미
             k.pop();
         }
         br.close();
-        bw.flush();
+        bw.flush(); // flush를 해줘야 write로 저장한 값들 출력
         bw.close();
     }
 }
