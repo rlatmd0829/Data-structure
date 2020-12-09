@@ -9,28 +9,34 @@ import java.util.StringTokenizer;
 
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    static public void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        List no = new ArrayList();
-        new ArrayList();
-        int a = sc.nextInt();
-        int copy = a;
-        int cnt=0;
-        while (true) {
-//            int a1 = a % 10; // 일의자리
-//            int a2 = a / 10; // 십의자리
-//            int w = (a1 + a2) % 10; // 일의자리 십의자리 더한값
-            a = ((a%10)*10) + (((a%10) + (a/10)) % 10);
-            cnt++;
+        int T = sc.nextInt();
 
-            if(a == copy){
-                break;
+
+        for(int i=0; i<T; i++){
+            int aud = sc.nextInt();
+            float sum = 0;
+            float avg = 0;
+            float cnt=0;
+            float arr[] = new float[aud];
+            for(int j=0; j<aud; j++){
+                arr[j] = sc.nextInt();
+                sum += arr[j];
             }
-        }
-        System.out.println(cnt);
 
+            avg = sum/aud;
+            for(int j=0; j<aud; j++) {
+                if (arr[j] > avg) {
+
+                    cnt++;
+                }
+            }
+
+            System.out.printf("%.3f",(cnt/aud)*100);
+            System.out.println("%");
+        }
 
     }
-
 }
 
