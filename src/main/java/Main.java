@@ -9,28 +9,41 @@ import java.util.StringTokenizer;
 
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    static public void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        List no = new ArrayList();
-        new ArrayList();
-        int a = sc.nextInt();
-        int copy = a;
-        int cnt=0;
-        while (true) {
-//            int a1 = a % 10; // 일의자리
-//            int a2 = a / 10; // 십의자리
-//            int w = (a1 + a2) % 10; // 일의자리 십의자리 더한값
-            a = ((a%10)*10) + (((a%10) + (a/10)) % 10);
-            cnt++;
+        String str = sc.nextLine();
+        int arr[] = new int[26];
+        for(int i=0; i<str.length(); i++){
+            if(str.charAt(i)>='a' && str.charAt(i) <='z') {
+                int x = str.charAt(i) - 'a'; // 'a'를 빼주면 a부터 0시작해서 z까지 0~26
 
-            if(a == copy){
-                break;
+                arr[x] += 1;
+            }
+            else{
+                int x = str.charAt(i) - 'A';
+                arr[x] += 1;
             }
         }
-        System.out.println(cnt);
+        int max = 0;
+        int cnt = 0;
+        int min = 0;
+        for(int i=0; i<arr.length; i++){
+            if(arr[i]>max){
+                max = arr[i];
+                cnt = i;
+            }
+            else if (arr[i]==max){
+                min = arr[i];
+            }
+        }
+        if(max == min){
+            System.out.println("?");
+        }
+        else {
+            System.out.println((char) (cnt + 'A'));
+        }
 
 
     }
-
 }
 
