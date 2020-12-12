@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 
-public class Main {
+public class Group { // 1316번 그룹단어 문제
     static public void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int T = sc.nextInt();
@@ -47,6 +47,5 @@ public class Main {
 
 
 
-   }
+    }
 }
-
