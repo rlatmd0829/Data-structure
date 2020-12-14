@@ -11,39 +11,24 @@ import java.util.StringTokenizer;
 public class Main {
     static public void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int T = sc.nextInt();
-        sc.nextLine();
-        int count=0;
-        for(int i=0; i<T; i++){
-            String str = sc.nextLine();
-            boolean arr[] = new boolean[26];
-            int prev = 0;
-            boolean check = true;
-            for(int j=0; j<str.length(); j++){
-                int now = str.charAt(j);
-
-                if(prev != now){
-                    if(arr[now-'a'] == false){ // 문자가 처음나오는 경우
-                        arr[now-'a']=true;
-                        prev = now;
-                    }
-                    else{  // 문자가 이미 나왔었던 경우 (그룹 단어가 아니게됨)
-                        check = false;
-                        break;
-
-                    }
-                }
-                else{ // 앞선 문자와 지금 문자가 같은경우
-                    continue;
-                }
-
+        int N = sc.nextInt();
+        int i=0;
+        int sum=0;
+        while (true){
+            int x=0;
+            if(i==0){
+                x=1;
+            }else {
+                x = 6 * i;
             }
-            if(check == true) {
-                count++;
+            sum += x;
+            i++;
+            if(sum>=N){
+                break;
             }
+
         }
-        System.out.println(count);
-
+        System.out.println(i);
 
 
 
