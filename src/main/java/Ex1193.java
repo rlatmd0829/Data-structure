@@ -4,6 +4,7 @@ public class Ex1193 { // 분수찾기 복붙, 너무 어렵다 이해포기
 
     public static void main(String[] args) {
 
+
         Scanner in = new Scanner(System.in);
         int X = in.nextInt();
 
