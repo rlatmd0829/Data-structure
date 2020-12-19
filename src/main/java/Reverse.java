@@ -39,7 +39,7 @@ public class Reverse {  //  9093 단어뒤집기 buffered에 대해서 공부하
                 else{
                     stack.push(input.charAt(j));
                 }
-            }
+            } // bw.write에서 int형은 출력 못하기 때문에 String.valueOf로 문자열로 바꿔서 출력해야함
             bw.write(sb.toString()+"\n"); // write 한다고 바로 출력되지않고 flush 할때 버퍼에서 출력됨?
             // toString은 객체가 가지고있는 정보를 문자열로 출력한다.
         }

@@ -1,6 +1,4 @@
-import org.w3c.dom.Node;
-
-public class LinkedList {
+public class LinkedListEx {
     private Node head;
     private Node tail;
     private int size = 0;
@@ -97,7 +95,7 @@ public class LinkedList {
     }
 
     public static void main(String[] args){
-        LinkedList numbers = new LinkedList();
+        LinkedListEx numbers = new LinkedListEx();
         numbers.addFirst(10);
         numbers.addLast(20);
         numbers.add(1,15);

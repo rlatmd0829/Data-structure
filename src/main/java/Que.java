@@ -1,11 +1,11 @@
-public class Queue {
+public class Que {
 
     private Object[] queue;
     private int size = 0;
     private int rear = -1;
     private int front = -1;
 
-    Queue(int size) {
+    Que(int size) {
         this.size = size;
         this.queue = new Object[size];	// 사이즈 만큼 큐 생성
     }
