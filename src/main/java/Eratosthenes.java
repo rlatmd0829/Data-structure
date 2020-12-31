@@ -1,17 +1,19 @@
 import java.util.Scanner;
 
-public class Main { // 백준 1929번 문제, 에라토스테네스의 체 이용해 소수 구하기
+public class Eratosthenes { // 백준 1929번 문제, 에라토스테네스의 체 이용해 소수 구하기
     public static boolean[] prime;
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        int T = sc.nextInt();
-        for(int i=0; i<T; i++){
-            int n = sc.nextInt();
+        int M = sc.nextInt();
+        int N = sc.nextInt();
+
+        prime = new boolean[N+1]; // 0없고 1부터 N까지수
+        get_prime();
+
+        for(int i=M; i<=N; i++){
+            // false = 소수
+            if(!prime[i]) System.out.println(i);
         }
-
-
-
-
 
 
     }
