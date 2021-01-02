@@ -11,26 +11,36 @@ import java.util.StringTokenizer;
 public class Main {
     static public void main(String[] args) throws IOException {
        Scanner  sc = new Scanner(System.in);
-       int T = sc.nextInt();
-       int arr[][] = new int[15][14];
+       int x = sc.nextInt();
+       int y = sc.nextInt();
+       int w = sc.nextInt();
+       int h = sc.nextInt();
 
-       for(int i=0; i<15; i++){
-           arr[i][1] = 1;
-           arr[0][i] = i;
+       int m = 0;
+       int n=0;
+
+       if(w-x < x){
+           m = w-x;
+       }
+       else{
+           m = x;
        }
 
-       for(int i=1; i<15; i++){
-           for(int j=1; j<15; j++){
-                arr[i][j] = arr[i-1][j]+arr[i][j-1];
-           }
+       if(h-y < y){
+           n = h-y;
+       }
+       else{
+           n=y;
        }
 
-       for(int i=0; i<T; i++){
-           int a = sc.nextInt();
-           int b = sc.nextInt();
-           System.out.println(arr[a][b]);
+       if(m>n){
+           System.out.println(n);
+       }
+       else{
+           System.out.println(m);
        }
     }
+
 
 }
 
