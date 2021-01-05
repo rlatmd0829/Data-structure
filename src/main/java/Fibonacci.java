@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 
-public class Main {
+public class Fibonacci {
 
     static Integer[][] dp = new Integer[41][2]; // null 이용하기 위해 Integer 배열 사용
 

@@ -7,8 +7,8 @@ public class Backtracking {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
-        int N = sc.nextInt();
-        int M = sc.nextInt();
+        int N = sc.nextInt(); // 숫자의 개수
+        int M = sc.nextInt(); // 깊이 값
 
         arr = new int[M]; // 자리수 M이 3이면 x,x,x 4이면 x,x,x,x
         visit = new boolean[N];
