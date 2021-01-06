@@ -5,39 +5,33 @@ import java.util.StringTokenizer;
 
 public class Main {
 
-    static Integer[][] dp = new Integer[41][2]; // null 이용하기 위해 Integer 배열 사용
-
+    public static long[] dp = new long[101];
     static public void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
-
-        dp[0][0] = 1; // N=0 일 때의 0 호출 횟수
-        dp[0][1] = 0; // N=0 일 때의 1 호출 횟수
-        dp[1][0] = 0; // N=1 일 때의 0 호출 횟수
-        dp[1][1] = 1; // N=1 일 때의 1 호출 횟수
-
-
-        int T = Integer.parseInt(br.readLine());
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
 
         for(int i=0; i<T; i++){
+            int N = sc.nextInt();
+            dp[0] = 0;
+            dp[1] = 1;
+            dp[2] = 1;
+            dp[3] = 1;
+            dp[4] = 2;
+            dp[5] = 2;
 
+            for(int j=6; j<=N; j++){
+                dp[j]=-1;
+            }
 
-            int a = Integer.parseInt(br.readLine());
-            fibonacci(a);
-            sb.append(dp[a][0] + " " + dp[a][1]).append('\n');
-
+            System.out.println(Pado(N));
         }
-        System.out.println(sb);
+
     }
-    public static Integer[] fibonacci(int n){
-        // n에 대한 0, 1의 호출 횟수가 없을 때 (아직 저장된 값이 없을때, 즉 처음인경우)
-        if(dp[n][0] == null || dp[n][1] == null){
-            dp[n][0] = fibonacci(n-1)[0] + fibonacci(n-2)[0];
-            dp[n][1] = fibonacci(n-1)[1] + fibonacci(n-2)[1];
+    public static long Pado(int N){
+        if(dp[N]==-1){
+            dp[N] = Pado(N-2) + Pado(N-3);
         }
-        // n에 대한 0과 1, 즉 [n][0]과 [n][1]을 담고있는 [n]을 반환한다.
-        return dp[n];
-
+        return dp[N];
     }
 
 

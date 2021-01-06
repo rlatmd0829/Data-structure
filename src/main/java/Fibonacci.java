@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 
-public class Fibonacci {
+public class Fibonacci { // 1003번 문제, DP 다이나믹 프로그래밍 기초문제, 0과 1이 출력되는 횟수, (DP는 점화식(규칙) 구하는게 가장중요하다 종이에 써보면서 생각해보자)
 
     static Integer[][] dp = new Integer[41][2]; // null 이용하기 위해 Integer 배열 사용
 
@@ -36,7 +36,7 @@ public class Fibonacci {
             dp[n][1] = fibonacci(n-1)[1] + fibonacci(n-2)[1];
         }
         // n에 대한 0과 1, 즉 [n][0]과 [n][1]을 담고있는 [n]을 반환한다.
-        return dp[n];
+        return dp[n]; // dp[2]가 반환되었다면 dp[2][0]과 dp[2][1]을 담고있는 dp[2]가 반환되었다는 것이다.
 
     }
 
