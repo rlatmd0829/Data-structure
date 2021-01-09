@@ -11,29 +11,24 @@ public class Main {
 
     static public void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-        int T = sc.nextInt();
+        int x = sc.nextInt();
+        int y = sc.nextInt();
 
-        arr = new int[T];
-        for (int i = 0; i < T; i++) {
-            arr[i] = sc.nextInt();
-        }
-        Arrays.sort(arr);
+        int n = fac(x);
+        int r = fac(y)*fac(x-y);
 
-        int sum = 0;
-        int prev = 0;
+        System.out.println((n/r)%10007);
 
-        for(int i=0; i<T; i++){
-            sum += prev + arr[i];
-
-            prev += arr[i];
-        }
-
-        System.out.println(sum);
 
 
     }
 
-
-
-
+    static int fac(int a){
+        if(a==0){
+            return 1;
+        }
+        else{
+            return a * fac(a-1);
+        }
+    }
 }
