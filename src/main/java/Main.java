@@ -1,34 +1,40 @@
 import java.io.*;
 import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.StringTokenizer;
+import java.math.BigInteger;
+import java.util.*;
 
 
 public class Main {
 
-    static int arr[];
-
-    static public void main(String[] args) throws IOException {
+    static public void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        int x = sc.nextInt();
-        int y = sc.nextInt();
+        int T = sc.nextInt();
 
-        int n = fac(x);
-        int r = fac(y)*fac(x-y);
+        BigInteger fac = fac(T);
+        int cnt=0;
+        while(fac!=BigInteger.valueOf(0)){
+            if(fac.remainder(BigInteger.valueOf(10))==BigInteger.valueOf(0)){
+                cnt++;
+                fac = fac.divide(BigInteger.valueOf(10));
+            }
+            else{
+                break;
+            }
+        }
+        System.out.println(cnt);
 
-        System.out.println((n/r)%10007);
 
 
 
     }
 
-    static int fac(int a){
-        if(a==0){
-            return 1;
+    static BigInteger fac(int N){
+        if(N==0){
+            return BigInteger.valueOf(1);
         }
-        else{
-            return a * fac(a-1);
-        }
+        return BigInteger.valueOf(N).multiply(fac(N-1));
     }
+
+
+
 }
