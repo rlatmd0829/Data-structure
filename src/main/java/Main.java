@@ -1,41 +1,30 @@
-import java.io.*;
-import java.lang.reflect.Array;
-import java.math.BigInteger;
-import java.util.*;
-
+import java.util.Scanner;
+import java.util.Stack;
 
 public class Main {
+    public static void main(String[] args) {
 
-    static public void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int T = sc.nextInt();
-
-        BigInteger fac = fac(T);
-        int cnt=0;
-        while(fac!=BigInteger.valueOf(0)){
-            if(fac.remainder(BigInteger.valueOf(10))==BigInteger.valueOf(0)){
-                cnt++;
-                fac = fac.divide(BigInteger.valueOf(10));
+        int start=0;
+        StringBuilder sb = new StringBuilder();
+        Stack<Integer> stack = new Stack();
+        while(T-->0){
+            int a = sc.nextInt();
+            if(a>start) {
+                for (int i = start + 1; i <= a; i++) {
+                    stack.push(i);
+                    sb.append('+').append('\n');
+                }
+                start=a;
+            }else if(stack.peek() != a){ // top에 있는 원소가 입력받은 값과 같지 않은 경우
+                System.out.println("NO");
+                return; // 더이상 탐색 할 필요가 없으므로 프로그램을 종료시켜 버린다. System.exit(0) 으로 대체해도됨
             }
-            else{
-                break;
-            }
+            stack.pop();
+            sb.append('-').append('\n');
         }
-        System.out.println(cnt);
-
-
-        
-
+        System.out.println(sb);
 
     }
-
-    static BigInteger fac(int N){
-        if(N==0){
-            return BigInteger.valueOf(1);
-        }
-        return BigInteger.valueOf(N).multiply(fac(N-1));
-    }
-
-
-
 }

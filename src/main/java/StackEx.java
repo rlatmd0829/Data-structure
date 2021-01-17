@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Stack {   // 스택구현
+public class StackEx {   // 스택구현
     static int stack[] = new int[10000];
     static int size;
     public static void main(String[] args){
@@ -8,7 +8,7 @@ public class Stack {   // 스택구현
         Scanner sc = new Scanner(System.in);
         System.out.println("몇번 입력할것인가");
         n = sc.nextInt();
-        Stack s;
+        StackEx s;
         while (true) {
             String cmd;
             System.out.println("무엇을 진행할 것인가");
@@ -17,20 +17,20 @@ public class Stack {   // 스택구현
                 int num;
                 System.out.println("데이터를 입력해주세요");
                 num = sc.nextInt();
-                Stack.push(num);
+                StackEx.push(num);
             } else if (cmd.equals("top")) {
                 //System.out.println((Stack.empty() ? -1 : Stack.top()));
-                if (!Stack.empty()) {
-                    System.out.println(Stack.top());
+                if (!StackEx.empty()) {
+                    System.out.println(StackEx.top());
                 }
             } else if (cmd.equals("size")) {
-                System.out.println(Stack.size);
+                System.out.println(StackEx.size);
             } else if (cmd.equals("empty")) {
-                System.out.println(Stack.empty());
+                System.out.println(StackEx.empty());
             } else if (cmd.equals("pop")) {
                 //System.out.println((Stack.empty() ? -1 : Stack.top()));
-                if (!Stack.empty()) {
-                    System.out.println(Stack.pop());
+                if (!StackEx.empty()) {
+                    System.out.println(StackEx.pop());
                 }
             }
             if(n==0){
@@ -40,7 +40,7 @@ public class Stack {   // 스택구현
         }
 
     }
-    public Stack(){
+    public StackEx(){
         size = 0;
     }
 
