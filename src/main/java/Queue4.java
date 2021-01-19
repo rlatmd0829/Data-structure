@@ -16,6 +16,7 @@ public class Queue4 { // 1021 회전하는 큐 Iterator 사용
         for(int i=1; i<=N; i++){
             q.add(i);
         }
+        
 
         for(int i=0; i<M; i++){
             int num = sc.nextInt();
