@@ -6,44 +6,22 @@ public class Main {
     // nCr = n!/r!(n-r)! = n~(n-r)!/r!
     public static void main(String[] args) throws IOException {
 
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int M = sc.nextInt();
-        int A[][] = new int[N][M];
+       Scanner sc = new Scanner(System.in);
+       int N = sc.nextInt();
 
-        for(int i=0; i<N; i++){
-            for(int j=0; j<M; j++){
-                A[i][j] = sc.nextInt();
-            }
+       int a= fibnachi(N);
+        System.out.println(a%1000000007);
+    }
+
+    public static int fibnachi(int n){
+        if(n==0){
+            return 0;
         }
-
-        M = sc.nextInt();
-        int K = sc.nextInt();
-        int B[][] = new int[M][K];
-
-        for(int i=0; i<M; i++){
-            for(int j=0; j<K; j++){
-                B[i][j] = sc.nextInt();
-            }
+        else if(n==1){
+            return 1;
         }
-
-
-        int C[][] = new int[N][K];
-
-        for(int i=0; i<N; i++){
-            for(int j=0; j<K; j++){
-                for(int k=0; k<M; k++){
-                    C[i][j] += A[i][k] * B[k][j];
-                }
-            }
+        else {
+           return fibnachi(n - 1) + fibnachi(n - 2);
         }
-
-        for(int i=0; i<N; i++){
-            for(int j=0; j<K; j++){
-                System.out.print(C[i][j]+" ");
-            }
-            System.out.println();
-        }
-
     }
 }
