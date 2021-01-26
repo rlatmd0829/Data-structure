@@ -3,65 +3,51 @@ import java.math.BigInteger;
 import java.util.*;
 
 public class Main {
-    static int[][] arr;
-    static boolean[] check;
-    static StringBuilder sb = new StringBuilder();
-    static int n,m,v;
+
+
+
     public static void main(String[] args) throws IOException {
 
-       Scanner sc = new Scanner(System.in);
-       n = sc.nextInt();
-       m = sc.nextInt();
-       v = sc.nextInt();
+        Scanner sc = new Scanner(System.in);
+        int[][] board = 	{{0, 0, 0, 0, 0}, {0, 0, 1, 0, 3}, {0, 2, 5, 0, 1}, {4, 2, 4, 4, 2}, {3, 5, 1, 3, 1}};
+        int [] moves =	{1, 5, 3, 5, 1, 2, 1, 4};
 
-       arr = new int[n+1][n+1];   // 왜 n+1 해주지??
-        check = new boolean[n+1];
+        System.out.println(solution(board, moves));
 
-        for(int i=0; i<m; i++){ // 노드와 간선에 대한 입력값 받아서 간선처리
-            int s = sc.nextInt();
-            int e = sc.nextInt();
-            arr[s][e] = 1;
-            arr[e][s] = 1;
-        }
 
-        dfs(v);
-        sb.append("\n");
-        Arrays.fill(check, false);
-        bfs(v);
-        System.out.println(sb);
     }
 
-    public static void dfs(int start){
-        //경로 출력
-        sb.append(start+" ");
-        //현재 노드 방문 처리
-        check[start] = true;
+    public static int solution(int[][] board, int[] moves) {
+        int answer=0;
+        Stack<Integer> stack = new Stack<Integer> ();
+        for(int i=0; i<moves.length; i++){
+            int select = moves[i];
+            for(int j=0; j<board.length; j++){
+                if(board[j][select-1] == 0){
+                    continue;
+                }
+                else{
 
-        for(int i=1; i<n+1; i++){
-            if(arr[start][i] == 1 && check[i] == false){
-                dfs(i); // 내가 찾은 경로가 만약에 다른 경로가 있으면
-                // 바로 다음 곳으로 이동시키고 없으면 다시 리커해서 돌아오는 방식임
-            }
-        }
-    }
+                    if(!stack.isEmpty() && (stack.peek() == board[j][select-1])){
+//                        System.out.println(i);
+//                        System.out.println(j);
+//                        System.out.println(select-1);
+                        stack.pop();
+                        board[j][select-1] = 0;
+                        answer=answer+2;
+                        break;
 
-    public static void bfs(int start){
-        Queue<Integer> q = new LinkedList<>();
-        q.offer(start);
-        check[start] = true;
-        // 방문한위치 check true 만들어줌
-        while (!q.isEmpty()){
-            int temp = q.poll();
-            // 첫번째 방문한 위치는 빼주기로한다.
-            sb.append(temp+ " ");
-
-            for(int i=1; i<=n; i++){
-                if(arr[temp][i] == 1 && check[i]==false){
-                    q.offer(i);
-                    check[i] = true; // true라면 방문을 한거임
+                    }
+                    else{
+                        stack.push(board[j][select-1]);
+                        board[j][select-1] = 0;
+                        break;
+                    }
                 }
             }
         }
-    }
 
+        return answer;
+    }
+    
 }

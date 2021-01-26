@@ -25,28 +25,28 @@ public class Ex2178_Bfs {
         for(int i=0; i<n; i++){
             for(int j=0; j<m; j++){
                 if(arr[i][j]==1 && check[i][j]==false){
-                    bfs(i,j);
+                    //bfs(i,j);
                 }
             }
         }
     }
 
-    public static int bfs(int x, int y){
-        Queue<Integer> qu = new LinkedList();
-        qu.offer(k);
+//    public static int bfs(int x, int y){
+//        Queue<Integer> qu = new LinkedList();
+//        qu.offer(x);
+//
+//
+//        while(!qu.isEmpty()){
+//            int temp = qu.poll();
+//            for(int i=1; i<4; i++){
+//                int nx = x + pos[i][0];
+//                int ny = y + pos[i][1];
+//                if(nx >= 0 && nx < n && ny >= 0 && ny < n && arr[nx][ny]==1 && check[nx][ny] == false){
+//                    bfs(nx, ny);
+//                }
+//            }
+//        }
+//        return cnt;
 
-
-        while(!qu.isEmpty()){
-            int temp = qu.poll();
-            for(int i=1; i<4; i++){
-                int nx = x + pos[i][0];
-                int ny = y + pos[i][1];
-                if(nx >= 0 && nx < n && ny >= 0 && ny < n && arr[nx][ny]==1 && check[nx][ny] == false){
-                    dfs(nx, ny);
-                }
-            }
-        }
-        return cnt;
-
-    }
+//    }
 }
