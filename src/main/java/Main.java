@@ -9,45 +9,53 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         Scanner sc = new Scanner(System.in);
-        int[][] board = 	{{0, 0, 0, 0, 0}, {0, 0, 1, 0, 3}, {0, 2, 5, 0, 1}, {4, 2, 4, 4, 2}, {3, 5, 1, 3, 1}};
-        int [] moves =	{1, 5, 3, 5, 1, 2, 1, 4};
+        //int n = sc.nextInt();
+        int[] array = {1,5,2,6,3,7,4};
+        int[][] commands = {{2,5,3},{4,4,1},{1,7,3}};
 
-        System.out.println(solution(board, moves));
+
+        int[] abc = solution(array, commands);
+        System.out.println("[");
+        for(int a : abc){
+
+            System.out.print(a);
+            if()
+            System.out.println(", ");
+
+        }
+        System.out.println("]");
+
 
 
     }
+    public static int[] solution(int[] array, int[][] commands) {
+        int x=0,y=0,z=0;
 
-    public static int solution(int[][] board, int[] moves) {
-        int answer=0;
-        Stack<Integer> stack = new Stack<Integer> ();
-        for(int i=0; i<moves.length; i++){
-            int select = moves[i];
-            for(int j=0; j<board.length; j++){
-                if(board[j][select-1] == 0){
-                    continue;
-                }
-                else{
+        int[] answer = {};
+        int [] result ={};
+        result = new int[commands.length];
+        for(int i=0; i<commands.length; i++){
+            int cnt = 0;
+            x = commands[i][0];
+            y = commands[i][1];
+            z = commands[i][2];
 
-                    if(!stack.isEmpty() && (stack.peek() == board[j][select-1])){
-//                        System.out.println(i);
-//                        System.out.println(j);
-//                        System.out.println(select-1);
-                        stack.pop();
-                        board[j][select-1] = 0;
-                        answer=answer+2;
-                        break;
+            answer = new int[y-x+1];
+            for(int j=x; j<=y; j++){
 
-                    }
-                    else{
-                        stack.push(board[j][select-1]);
-                        board[j][select-1] = 0;
-                        break;
-                    }
-                }
+                answer[cnt] = array[j-1];
+                cnt++;
+
             }
+            Arrays.sort(answer);
+
+
+            result[i] = answer[z-1];
+
         }
 
-        return answer;
+
+        return result;
     }
     
 }

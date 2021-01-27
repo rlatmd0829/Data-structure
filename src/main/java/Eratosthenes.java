@@ -7,7 +7,7 @@ public class Eratosthenes { // 백준 1929번 문제, 에라토스테네스의 �
         int M = sc.nextInt();
         int N = sc.nextInt();
 
-        prime = new boolean[N+1]; // 0없고 1부터 N까지수
+        prime = new boolean[N+1]; // 0~N까지에 수를 배열에 넣기 위해서는 N+1로 선언
         get_prime();
 
         for(int i=M; i<=N; i++){
