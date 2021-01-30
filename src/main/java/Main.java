@@ -19,30 +19,10 @@ public class Main {
 
 
     }
-    boolean solution(String s) {
-
-        char c [] = s.toCharArray();
-
-        int pcnt=0;
-        int ycnt=0;
-        for(int i=0; i<c.length-1; i++){
-            if(c[i]=='p' || c[i]=='P'){
-                pcnt++;
-            }
-            else if(c[i] == 'y' || c[i] == 'Y'){
-                ycnt++;
-            }
-        }
-        if(pcnt == ycnt){
-            return true;
-        }
-        else {
-            return false;
-        }
-        // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-        //System.out.println("Hello Java");
-
-
+    public int solution(String s) {
+        int answer = 0;
+        answer = Integer.parseInt(s);
+        return answer;
     }
     
 }
