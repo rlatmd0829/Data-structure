@@ -19,9 +19,18 @@ public class Main {
 
 
     }
-    public int solution(String s) {
-        int answer = 0;
-        answer = Integer.parseInt(s);
+    public int[] solution(int[] arr, int divisor) {
+        int[] answer = {};
+        ArrayList<Integer> list = new ArrayList();
+        for(int i=0; i<arr.length; i++){
+            if(arr[i] % divisor ==0){
+                list.add(arr[i]);
+            }
+        }
+        answer = new int[list.size()];
+        for(int i=0; i<list.size(); i++){
+            answer[i]=list.get(i);
+        }
         return answer;
     }
     
