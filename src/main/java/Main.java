@@ -14,23 +14,19 @@ public class Main {
         int[][] commands = {{2,5,3},{4,4,1},{1,7,3}};
 
 
-        System.out.println('a'-'0');
+        String a[] = solution(1132548);
+        for(String i : a){
+            System.out.println(i);
+        }
+        System.out.println();
 
 
 
     }
-    public int[] solution(int[] arr, int divisor) {
-        int[] answer = {};
-        ArrayList<Integer> list = new ArrayList();
-        for(int i=0; i<arr.length; i++){
-            if(arr[i] % divisor ==0){
-                list.add(arr[i]);
-            }
-        }
-        answer = new int[list.size()];
-        for(int i=0; i<list.size(); i++){
-            answer[i]=list.get(i);
-        }
+    public static String solution(long n) {
+        String[] array = String.valueOf(n).split("");
+        Collections.reverse(Arrays.asList(array));
+        answer = Long.parseLong(String.join("", array));
         return answer;
     }
     
