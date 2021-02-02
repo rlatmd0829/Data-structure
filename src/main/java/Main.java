@@ -14,19 +14,21 @@ public class Main {
         int[][] commands = {{2,5,3},{4,4,1},{1,7,3}};
 
 
-        String a[] = solution(1132548);
-        for(String i : a){
-            System.out.println(i);
-        }
-        System.out.println();
-
-
+        //String a[] = solution(1132548);
+        System.out.println('Z'+1);
+        //solution("abc",1);
+        //97~122 소문자
+        //65~90 대문자
 
     }
-    public static String solution(long n) {
-        String[] array = String.valueOf(n).split("");
-        Collections.reverse(Arrays.asList(array));
-        answer = Long.parseLong(String.join("", array));
+    public static String solution(String s, int n) {
+        String answer = "";
+        char[] c = s.toCharArray();
+        for(int i=0; i<c.length; i++){
+            c[i] = (char)(c[i]+n);
+            answer += c[i];
+        }
+
         return answer;
     }
     
