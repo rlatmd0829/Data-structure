@@ -30,7 +30,9 @@ public class Main {
             answer[i] = Integer.parseInt(str[i]);
         }
 
-       
+
+
+        
 
         List<Integer> list = Arrays.asList(answer);
         Collections.reverse(list);
