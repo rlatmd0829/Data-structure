@@ -32,7 +32,7 @@ public class Main {
 
 
 
-        
+
 
         List<Integer> list = Arrays.asList(answer);
         Collections.reverse(list);
