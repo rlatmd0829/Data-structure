@@ -52,6 +52,7 @@ public class Ex2667_Dfs {
             // 2. 단지가 연결이 되있는지
             // 3. 방문을 하지않은 곳이였을때
 
+
             if(nx >= 0 && nx < n && ny >= 0 && ny < n && arr[nx][ny]==1 && check[nx][ny] == false){
                 dfs(nx, ny);
             }
