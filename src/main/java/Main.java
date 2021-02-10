@@ -3,44 +3,33 @@ import java.math.BigInteger;
 import java.util.*;
 
 public class Main {
-
-
-
     public static void main(String[] args) throws IOException {
 
         Scanner sc = new Scanner(System.in);
-        //int n = sc.nextInt();
-        int[] array = {1,5,2,6,3,7,4};
-        int[][] commands = {{2,5,3},{4,4,1},{1,7,3}};
+        int n = sc.nextInt();
+        int k = sc.nextInt();
 
+        int[] arr = new int[n+1];
 
-        //String a[] = solution(1132548);
-        solution(12345);
-        //solution("abc",1);
-        //97~122 소문자
-        //65~90 대문자
-
-    }
-    public static Integer[] solution(long n) {
-        Integer[] answer = {};
-        String s = Long.toString(n);
-        String str[] = s.split("");
-        answer = new Integer[str.length];
-        for(int i=0; i<str.length; i++){
-            answer[i] = Integer.parseInt(str[i]);
+        for(int i=0; i<=n; i++){
+            arr[i] = i;
         }
 
+        for(int i=2; i<=n; i++){
+            if(arr[i] == 0){
+                continue;
+            }
+            for(int j=i*i; j<=n; j+=i){
+                int temp = arr[j];
+                arr[j] = 0;
+                k--;
+                if(k==0){
+                    System.out.println(temp);
+                    System.exit(0);
+                }
 
-
-
-
-        List<Integer> list = Arrays.asList(answer);
-        Collections.reverse(list);
-        for(int i=0; i<answer.length; i++){
-            answer[i] = list.get(i);
+            }
         }
 
-        return answer;
     }
-    
 }
