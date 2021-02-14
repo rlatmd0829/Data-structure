@@ -14,7 +14,6 @@ public class dfs_test {
             for(int num : numbers){
                 sum+=num;
             }
-            
 
             if(target == sum) answer++;
         }
