@@ -16,6 +16,7 @@ public class Eratosthenes { // 백준 1929번 문제, 에라토스테네스의 �
         }
 
 
+
     }
     // 에라토스테네스의 체 알고리즘
     public static void get_prime(){
