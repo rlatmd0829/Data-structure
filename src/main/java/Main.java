@@ -3,22 +3,20 @@ import java.math.BigInteger;
 import java.util.*;
 
 public class Main {
-
     public static void main(String[] args) throws IOException {
 
-
         Scanner sc = new Scanner(System.in);
-        String str = sc.next();
-        char[] c = str.toCharArray();
-        int [] arr = new int[26];
-        for(int i=0; i<c.length; i++){
-            arr[c[i]-'a']++;
+        char[][] arr = new char[8][8];
+        int cnt = 0;
+        for(int i=0; i<arr.length; i++){
+            String str = sc.nextLine();
+            for(int j=0; j<arr.length; j++){
+                arr[i][j] = str.charAt(j);
+                if((i+j)%2 == 0 && arr[i][j] == 'F'){
+                    cnt++;
+                }
+            }
         }
-        for(int a : arr){
-            System.out.print(a+" ");
-        }
-
-
-
+        System.out.println(cnt);
     }
 }
