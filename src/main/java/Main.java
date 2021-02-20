@@ -4,19 +4,23 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-
-        Scanner sc = new Scanner(System.in);
-        char[][] arr = new char[8][8];
-        int cnt = 0;
-        for(int i=0; i<arr.length; i++){
-            String str = sc.nextLine();
-            for(int j=0; j<arr.length; j++){
-                arr[i][j] = str.charAt(j);
-                if((i+j)%2 == 0 && arr[i][j] == 'F'){
-                    cnt++;
-                }
+        int[] arr = {3,7,19,25,2,6,4};
+        System.out.println(solution(arr));
+    }
+    public static int solution(int[] citations) {
+        int answer = 0;
+        ArrayList<Integer> list = new ArrayList();
+        for(int i=0; i<citations.length; i++){
+            list.add(citations[i]);
+        }
+        Collections.sort(list);
+        Collections.reverse(list);
+        System.out.println(list);
+        for(int i=0; i<list.size(); i++){
+            if(list.get(i)<i+1){
+                return i;
             }
         }
-        System.out.println(cnt);
+        return citations.length;
     }
 }
