@@ -3,25 +3,29 @@ import java.util.Scanner;
 public class Main{
     public static void main(String[] args)
     {
-        int cnt1=0;
-        int cnt2=0;
         Scanner sc = new Scanner(System.in);
-        String str = sc.next();
-        char[] c = str.toCharArray();
-        for(int i=0; i<c.length; i++){
-            if(c[i] == '('){
-                cnt1++;
-            }
-            else if (c[i] == ')'){
-                    cnt2++;
+        int N = sc.nextInt();
+        String[] str = new String[N];
+        for(int i=0; i<N; i++){
+            str[i] = sc.next();
+        }
+
+        for(int i=0; i<str[0].length(); i++){
+            boolean dif = false;
+            for(int j=0; j<N-1; j++){
+                if(str[j].charAt(i) != str[j+1].charAt(i)){
+                    dif = true;
+                    break;
                 }
             }
-        if(cnt1 == cnt2){
-            System.out.println("YES");
-
-        }else{
-            System.out.println("NO");
+            if(dif==true){
+                System.out.print('?');
+            }
+            else{
+                System.out.print(str[0].charAt(i));
+            }
         }
+
     }
 
 
