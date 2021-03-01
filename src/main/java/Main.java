@@ -1,32 +1,28 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main{
-    public static void main(String[] args)
-    {
+    public static void main(String args[]) {
+        int x;
         Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        String[] str = new String[N];
-        for(int i=0; i<N; i++){
-            str[i] = sc.next();
-        }
+        String str = sc.nextLine();
+        String[] s = str.split(" ");
+        ArrayList list = new ArrayList();
 
-        for(int i=0; i<str[0].length(); i++){
-            boolean dif = false;
-            for(int j=0; j<N-1; j++){
-                if(str[j].charAt(i) != str[j+1].charAt(i)){
-                    dif = true;
-                    break;
-                }
-            }
-            if(dif==true){
-                System.out.print('?');
-            }
-            else{
-                System.out.print(str[0].charAt(i));
+        x = sc.nextInt();
+        String[] a = new String[x];
+        for(int i=0; i<x; i++){
+            a[i] = sc.nextLine();
+
+        }
+        for(int j=0; j<a[0].length(); j++){
+            int i=0;
+            if(a[i].charAt(j) == a[i+1].charAt(j) ){
+                list.add(a[i].charAt(j));
             }
         }
-
+        System.out.println(x);
     }
-
 
 }
